@@ -1,0 +1,13 @@
+#sys gmsh outer.geo
+read outer.inp
+
+# remove surface elements
+zap +CPS8
+
+send all abq
+send inlet abq nam
+send outlet abq nam
+send interface abq nam
+send wall abq nam
+comp wall do
+send wall abq pres 1.2e4
